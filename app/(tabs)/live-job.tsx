@@ -1,14 +1,10 @@
-import { StyleSheet } from "react-native";
-
-import EditScreenInfo from "@/components/EditScreenInfo";
-import { Text, View } from "@/components/Themed";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function LiveJobScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Live Job</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/live-job.tsx" />
+      <View style={styles.separator} />
     </View>
   );
 }
@@ -27,5 +23,6 @@ const styles = StyleSheet.create({
     marginVertical: 30,
     height: 1,
     width: "80%",
+    backgroundColor: "#eee",
   },
 });
