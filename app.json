@@ -24,9 +24,17 @@
       "edgeToEdgeEnabled": true,
       "package": "com.anonymous.tmsdriver"
     },
-    "plugins": ["expo-router"],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-font",
+        {
+          "fonts": ["./assets/fonts/Lato-Regular.ttf"]
+        }
+      ]
+    ]
   }
 }
