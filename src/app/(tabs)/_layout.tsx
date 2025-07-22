@@ -1,13 +1,15 @@
 import React from 'react'
 import { MaterialIcons, FontAwesome, FontAwesome6 } from '@expo/vector-icons'
 import { Tabs } from 'expo-router'
+import { color } from '@/src/constants/color'
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: '#2f95dc',
-        headerShown: true
+        headerShown: true,
+        sceneStyle: { backgroundColor: color.appBackground }
       }}
     >
       <Tabs.Screen
@@ -28,14 +30,18 @@ export default function TabLayout() {
         name="live-job"
         options={{
           title: 'Live Job',
-          tabBarIcon: ({ color }) => <FontAwesome6 name="location-arrow" size={28} style={{ marginBottom: -3 }} color={color} />
+          tabBarIcon: ({ color }) => (
+            <FontAwesome6 name="location-arrow" size={28} style={{ marginBottom: -3 }} color={color} />
+          )
         }}
       />
       <Tabs.Screen
         name="settings"
         options={{
           title: 'Settings',
-          tabBarIcon: ({ color }) => <MaterialIcons name="settings" size={28} style={{ marginBottom: -3 }} color={color} />
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons name="settings" size={28} style={{ marginBottom: -3 }} color={color} />
+          )
         }}
       />
     </Tabs>

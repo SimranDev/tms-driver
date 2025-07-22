@@ -1,28 +1,24 @@
-import { StyleSheet, Text, View } from 'react-native'
+import Card from '@/src/components/Card'
+import { jobs } from '@/src/seed/data'
+import { FlatList, StyleSheet } from 'react-native'
 
-export default function TabOneScreen() {
+export default function Requests() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Requests</Text>
-      <View style={styles.separator} />
-    </View>
+    <FlatList
+      data={jobs}
+      renderItem={({ item }) => <Card job={item} />}
+      keyExtractor={(item) => String(item.id)}
+      contentContainerStyle={s.container}
+    />
   )
 }
 
-const styles = StyleSheet.create({
+//
+
+const s = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold'
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-    backgroundColor: '#eee'
+    padding: 16,
+    gap: 16
   }
 })

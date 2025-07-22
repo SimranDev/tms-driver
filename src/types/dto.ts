@@ -77,3 +77,8 @@ export interface Job {
 }
 
 export type CreateJob = Omit<Job, 'id' | 'createdAt' | 'updatedAt' | 'createdByUserId'>
+
+export interface LoginResponseDTO {
+  driver: Driver
+  accessToken: string
+}
